@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_app_flutter/home.dart';
-import 'package:login_app_flutter/login.dart';
+import 'package:salam_app/home.dart';
+import 'package:salam_app/login.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -39,20 +39,18 @@ class _LoginPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(30.0),
+        child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/login_pic.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+        padding: EdgeInsets.fromLTRB(30, 330, 30, 80),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-                child: SizedBox(
-                  child: Image.asset(
-                    "assets/signin_pic.jpg",
-                    width: 350.0,
-                    height: 350.0,
-                  ),
-                ),
-              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -141,15 +139,16 @@ class _LoginPageState extends State<RegisterPage> {
                       Navigator.pop(context);
                     }
                   },
-                  child: Text("Lanjutkan"),
+                  child: Text("Lanjutkan",
+                  style: TextStyle(color: Colors.black)),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF673AB7), // mengubah warna latar belakang button menjadi ungu
+                    primary: Color(0xFF19F5CC), // mengubah warna latar belakang button menjadi ungu
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
             Center(
                 child: SizedBox(
@@ -182,8 +181,18 @@ class _LoginPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
+              Center(
+                    child: SizedBox(
+                      child: Image.asset(
+                        "assets/salam_logo.png",
+                        width: 80,
+                        height: 80,
+                      ),
+                    ),
+                  ),
           ],
         ),
+      ),
       ),
     );
   }
