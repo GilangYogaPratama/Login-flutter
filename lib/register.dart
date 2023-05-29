@@ -23,7 +23,6 @@ class _LoginPageState extends State<RegisterPage> {
         email: emailController.text,
         password: passwordValController.text,
       );
-      
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
@@ -45,25 +44,25 @@ class _LoginPageState extends State<RegisterPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-                child: SizedBox(
-                  child: Image.asset(
-                    "assets/signin_pic.jpg",
-                    width: 350.0,
-                    height: 350.0,
-                  ),
+              child: SizedBox(
+                child: Image.asset(
+                  "assets/signin_pic.jpg",
+                  width: 350.0,
+                  height: 350.0,
                 ),
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Daftar',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40.0,
-                    color: Color.fromARGB(255, 3, 3, 3),
-                  ),
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Daftar',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                  color: Color.fromARGB(255, 3, 3, 3),
                 ),
               ),
+            ),
             SizedBox(
               height: 10.0,
             ),
@@ -73,10 +72,10 @@ class _LoginPageState extends State<RegisterPage> {
                 border: UnderlineInputBorder(),
                 hintText: "Tuliskan Email",
                 prefixIcon: Icon(
-                    Icons.email,
-                    color: Colors.grey,
-                    size: 22,
-                  ),
+                  Icons.email,
+                  color: Colors.grey,
+                  size: 22,
+                ),
               ),
             ),
             SizedBox(
@@ -90,10 +89,10 @@ class _LoginPageState extends State<RegisterPage> {
                 hintText: "Tuliskan Password",
                 errorText: errorValidator ? "Password Tidak Sama" : null,
                 prefixIcon: Icon(
-                    Icons.lock,
-                    color: Colors.grey,
-                    size: 22,
-                  ),
+                  Icons.lock,
+                  color: Colors.grey,
+                  size: 22,
+                ),
               ),
             ),
             SizedBox(
@@ -107,18 +106,17 @@ class _LoginPageState extends State<RegisterPage> {
                 hintText: "Konfirmasi Password",
                 errorText: errorValidator ? "Password Tidak Sama" : null,
                 prefixIcon: Icon(
-                    Icons.lock,
-                    color: Colors.grey,
-                    size: 22,
-                  ),
+                  Icons.lock,
+                  color: Colors.grey,
+                  size: 22,
+                ),
               ),
             ),
             SizedBox(
               height: 20.0,
             ),
             Text(
-              "Dengan mendaftar, anda menyetujui persyaratan & ketentuan yang berlaku serta peraturan privasi"
-            ),
+                "Dengan mendaftar, anda menyetujui persyaratan & ketentuan yang berlaku serta peraturan privasi"),
             SizedBox(
               height: 10.0,
             ),
@@ -143,7 +141,8 @@ class _LoginPageState extends State<RegisterPage> {
                   },
                   child: Text("Lanjutkan"),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF673AB7), // mengubah warna latar belakang button menjadi ungu
+                    primary: Color(
+                        0xFF673AB7), // mengubah warna latar belakang button menjadi ungu
                   ),
                 ),
               ),
@@ -152,36 +151,37 @@ class _LoginPageState extends State<RegisterPage> {
               height: 20.0,
             ),
             Center(
-                child: SizedBox(
-                  child: TextButton(
-                    onPressed: (){
-                      Navigator.push(context, 
-                        MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+              child: SizedBox(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Sudah punya akun? ",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          color: Colors.grey,
                         ),
-                      );
-                    }, 
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Sudah punya akun? ",
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.grey,
-                          ),
+                      ),
+                      Text(
+                        "Login",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                        Text(
-                          "Login", 
-                          style: TextStyle(
-                            fontSize: 15.0,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+            ),
           ],
         ),
       ),
