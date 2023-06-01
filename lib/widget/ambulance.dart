@@ -23,69 +23,47 @@ class AmbulanceWidget extends StatelessWidget {
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(10),
               ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16, top: 55),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Halo Ambulance',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      "Nomor Darurat",
+                      style: TextStyle(
+                        fontStyle: FontStyle.normal,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: 60,
+              right: 16,
               child: Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16, top: 55),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Halo Ambulance',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "Nomor Darurat",
-                              style: TextStyle(
-                                  fontStyle: FontStyle.normal,
-                                  color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                  Icon(
+                    Icons.chat_outlined,
+                    color: Colors.white,
+                    size: 35,
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(right: 16, left: 115, top: 12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.chat_outlined,
-                              color: Colors.white,
-                              size: 35,
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.phone_forwarded_outlined,
-                              color: Colors.white,
-                              size: 35,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
+                  SizedBox(width: 10),
+                  Icon(
+                    Icons.phone_forwarded_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
                 ],
               ),
             ),
@@ -105,27 +83,24 @@ class AmbulanceWidget extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.only(left: 16, top: 8, right: 16),
-              child: Column(children: [
-                Row(
-                  children: [
-                    Text(
-                      "RSUD Tidar Kota Magelang",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "RSUD Tidar Kota Magelang",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 4),
+                  Expanded(
+                    child: Text(
+                      "Jl. Tidar No.30A, Kemirirejo, Kec. Magelang Tengah, Kota Magelang, Jawa Tengah 56125",
                     ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                          "Jl. Tidar No.30A, Kemirirejo, Kec. Magelang Tengah, Kota Magelang, Jawa Tengah 56125"),
-                    )
-                  ],
-                ),
-              ]),
+                  ),
+                ],
+              ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
